@@ -3,8 +3,8 @@
     <div class="header">
       <a href="#default" class="logo">Qualicorp Dev Test</a>
       <div class="header-right">
-        <a href="#home">Meu perfil</a>
-        <a href="#contact">Sair</a>
+        <router-link to="/user-profile">Meu perfil</router-link>
+         <span @click="logout()">Sair</span>
       </div>
     </div>
   </div>
@@ -13,10 +13,16 @@
 <script>
 export default {
   name: "Header",
+  methods: {
+    logout(){
+      localStorage.removeItem('user-token')
+      localStorage.removeItem('user-id')
+      this.$router.push('/login')
+    }
+  }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .header {
   overflow: hidden;
@@ -38,7 +44,16 @@ export default {
   line-height: 25px;
   border-radius: 4px;
 }
-
+.header router-link, span{
+  float: left;
+  color: #5C5F69;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
 .header a.logo {
   font-size: 25px;
   font-weight: bold;
@@ -59,7 +74,6 @@ export default {
   margin-right: 30px;
   font-weight: bold;
 }
-
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
