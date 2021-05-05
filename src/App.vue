@@ -29,14 +29,10 @@ export default {
           this.$toast.open({ message: error.response.data.msg, type: "error" });
           return Promise.reject(error);
         }
-        if (error.response.status === 402) {
-          this.$toast.open({ message: error.response.data.msg, type: "error" });
-          return (window.location.href = error.response.data.location);
-        }
         this.httpError = error.response.data;
         this.$store.dispatch("loaderState", false);
         this.$toast.open({
-          message: "Test message from Vue",
+          message: "Error",
           position: "top",
           type: "error",
           duration: 5000,
@@ -48,7 +44,6 @@ export default {
   },
   data() {
     return {
-      error: false,
       httpError: {
         code: "0000",
         message: "Ocorreu um erro em sua requisição.",

@@ -116,6 +116,8 @@ export default {
       this.$store
         .dispatch("deleteUser", localStorage.getItem("user-id"))
         .finally(() => {
+          localStorage.removeItem('user-token')
+          localStorage.removeItem('user-id')
            this.$toast.open({
           message: "Usuário deletado",
           position: "top",
