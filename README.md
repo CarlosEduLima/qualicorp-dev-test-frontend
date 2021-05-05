@@ -1,24 +1,27 @@
-# qualicorp-test-dev-frontend
+# Qualicorp Dev Test
+> Frontend CRUD de usuários 
 
-## Project setup
-```
+## Instalação local
+
+Windows:
+
+* Clone o projeto 
+* No diretório raiz rode os sequintes comandos:
+
+```sh
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Tecnologias
 
-### Lints and fixes files
-```
-npm run lint
-```
+* Vue.js
+* Vuex
+* vue-toast-notification
+* vue-router
+* axios
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Demo
+
+* https://zen-hodgkin-8629ec.netlify.app/
+
